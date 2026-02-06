@@ -1,5 +1,19 @@
 /* || General setup */
 
+
+/*-------------------------------------------------------------------
+TEST RESULTS:
+
+Contrast Ratio: 8.59:1   Text Size: Normal
+
+Sample
+
+WCAG AA: Pass
+WCAG AAA: Pass
+
+----------------------------------------------------------------------*/
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -18,7 +32,7 @@ body {
 
 /* || typography */
 
-font[size="7"], font[size="6"], font[size="5"] {
+font[size="7"], font[size="7"], font[size="7"] {
   font-family: 'Sonsie One', cursive;
   color: black;
 }

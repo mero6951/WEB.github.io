@@ -1,3 +1,6 @@
+<!--SCREEN READER EXPERERIENCE IS AWESOME!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,10 +13,8 @@
 
     <html lang="en"> <!--language-->
     
-    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    
+    
   </head>
 
   <body>
@@ -55,17 +56,17 @@
         <table>
           <thead>
             <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Wild</td>
+              <th scope="col">Wild</th>
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -73,7 +74,7 @@
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <td>Urban</td>
+              <th scope="col">Urban</th>
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -119,9 +120,9 @@
         <section class="comments">
           <button class="show-hide">Show comments</button>
 
-          <div class="comment-wrapper">
+          <div class="comment-wrapper" id="comment-wrapper">
 
-            <font size="10">Add comment</font>
+            <font size="8">Add comment</font>
 
             <form class="comment-form">
               <div class="flex-pair">
@@ -133,11 +134,11 @@
                 <input type="text" name="comment" id="comment" placeholder="Enter your comment" aria-label="Enter your comment">
               </div>
               <div>
-                <input type="submit" value="Submit comment">
+                <input type="submit" value="Submit comment" aria-label="SUBMIT">
               </div>
             </form>
 
-            <font size="10">Comments</font>
+            <font size="8">Comments</font>
 
             <ul class="comment-container">
 

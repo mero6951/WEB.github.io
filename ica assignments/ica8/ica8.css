@@ -16,6 +16,17 @@ article {
   height: 297mm;
   margin: 20px auto;
   position: relative;
+
+  border-top: 1mm solid brown;
+    border-bottom: 1mm solid brown;
+    background-color: white;
+
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0%,   
+      rgba(0, 0, 0, 0) 10%,    
+      rgba(0, 0, 0, 0) 80%,    
+      rgba(0, 0, 0, 0.5) 100%
+    );
 }
 
 address {
@@ -41,11 +52,8 @@ h1 {
   
 }
 
-body {
-    background-color: white;
-    border-top: 1mm solid brown;
-    border-bottom: 1mm solid brown;
-}
+
+
 
 .top-image{
     position: absolute;
@@ -54,7 +62,7 @@ body {
 }
 
 .bottom-image{
-    position: absolute;
     bottom: 0;
+    position: absolute;
     width: 100%;
 }

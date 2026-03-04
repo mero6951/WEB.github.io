@@ -2,7 +2,7 @@ body {
   font: 1.2em / 1.5 sans-serif;
 }
 
-nav ul {
+.one {
   max-width: 750px;
   list-style: none;
   padding: 0;
@@ -20,7 +20,7 @@ nav a:visited {
   text-decoration: none;
 }
 
-nav ul {
+.one {
   display: flex;
   justify-content: space-between;
 }
@@ -31,14 +31,14 @@ nav ul {
 body {
   font: 1.2em / 1.5 sans-serif;
 }
-ul {
+.two {
   max-width: 750px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.two li {
   background-color: #4d7298;
   border: 2px solid #77a6b6;
   border-radius: 0.5em;
@@ -46,16 +46,44 @@ li {
   padding: 0.5em;
 }
 
-ul {
+.two {
   display: flex;
 }
 
-li {
+.two li {
   flex: 1;
 }
 
-li:first-child {
+.two li:first-child {
   flex: 2;
+}
+
+/*====================================*/
+
+
+.three {
+  width: 450px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.three li {
+  background-color: #4d7298;
+  border: 2px solid #77a6b6;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.three {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.three li {
+  flex: auto;
 }
 
 /*====================================*/

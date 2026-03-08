@@ -1,77 +1,111 @@
 
-.header .title {
-    font-size: 200%;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:aliceblue;
-    padding-left: 5px;
-    padding-top: 10px;
+.header .title a  {
+    font-size: 300%;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: -2px;
     
 }
 
-.header a {
-    font-size: 120%;
+.header ul a  {
     color: #fff;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:Verdana;
     text-decoration: none;
-    padding: 10px;
-    display: block;
+    display: inline;
+    padding: 15px;
+    margin: 5px;
+
 }
 .header a:hover{
-    color: blue;
+    color: orange;
     text-decoration: none;
 }
 
 .header ul {
-    align-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
-    padding-top: 30px;
-    padding-right: 30px;
-
 }
 
 .header{
     background-color: black;
-    border: 5px solid orange;
-    display: flex;
-    justify-content: space-between;
     position:sticky;
     top: 0px;
     z-index: 10;
-    align-content: center;
+    padding: 5px;
 }
 
-.photo1{
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
 
-    padding: 15px;
-    border-radius: 100%;
-    float: left;
-}
-
-.imageTitle{
-    display: flex;
-    align-content: center;
-    padding-left: 10px;
-}
-
-body{
+.HomeBody{
 padding: 0;
 margin: 0;
+background-image: url(images/mtn.jpg);
+background-size: cover;
+background-position: top;
+background-attachment: fixed;
 }
 
 main{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+
 }
 
 .one{
-    background-color: blue;
+    display: flex;
+    background-color: gray;
+    margin: 4%;
+    height: 1000px; 
+    
+}
+
+
+/*===========================================================================================*/
+
+.headerP{
+    background-color: whitesmoke;
+    position:sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 5px;
+}
+
+
+.headerP .title a  {
+    font-size: 300%;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: -2px;
+    
+}
+
+.headerP ul a  {
+    font-family:Verdana;
+    text-decoration: none;
+    display: inline;
+    padding: 15px;
+    margin: 5px;
+
+}
+.headePr a:hover{
+    color: blue;
+    text-decoration: none;
+}
+
+.headerP ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.headerP{
+    background-color: black;
+    position:sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 5px;
 }

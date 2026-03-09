@@ -55,13 +55,41 @@ margin: 0;
 }
 
 .page{
-    display: flex;
-    background-color: gray;
+    background-color: rgb(159, 184, 209); /*rgb(147, 168, 189)*/
     margin: 4%;
-    height: 1000px; 
-    
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-bottom: 1px dotted black;
+    padding-bottom: 15px;
+}
+
+h2{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    scroll-margin-top: 150px;
+}
+
+.p1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+article{
+    padding: 30px;
+}
+ .Meyer{
+    border-radius: 5%;
+    width: 50%;
+    height: auto;
+    float: right;
+    margin-left: 20px;
+}
 
 /*===========================================================================================*/
 
@@ -107,9 +135,9 @@ margin: 0;
 
 .Pbody{
     margin: 0;
-padding: 0;
-overflow-x: hidden;
-background-color: whitesmoke;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: whitesmoke;
 }
 
 
@@ -161,3 +189,109 @@ background-color: whitesmoke;
 #L { grid-area: L; }
 
 
+/*===========================================================================================*/
+
+.extra{
+    width: 50%;
+    margin: 0 auto;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: RGB(189, 168, 147);
+    min-width: 500px;
+}
+
+.extra ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.extra a:hover{
+    color: RGB(0, 21, 200);
+}
+
+.extra ul a{
+    color: black;
+    font-weight: bolder;
+    font-family:Verdana;
+    text-decoration: none;
+    display: inline;
+    padding: 15px;
+    margin: 5px;
+}
+
+.page2{
+    margin:0;
+    background-color: black;
+    box-shadow: 0px 15px 20px 10px black, 0px -15px 20px 10px black;
+}
+
+
+/*--------resume stuff--------------------------------------------------*/
+#resume {
+    color: white;
+    font-size: 150%;
+    text-align: center;
+    border-bottom: 2px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    scroll-margin-top: 100px;
+}
+
+.resumePhoto{
+    padding: 20px;
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.resumeP{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+}
+.resumeP a{
+    color: lightblue;;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+.resumeP a:hover{
+    color: orange; 
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+/*----------------------------------------------------------*/
+
+
+.linkedin{
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    color: darkblue;
+}
+.linkedin:hover{
+    color:brown;
+}
+
+strong {
+    font-size: 105%;
+}
+
+.p2{
+    font-family: Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.headshot {
+    width: 200px;
+    height: auto;
+    border-radius: 5%;
+    float: right;
+    margin-left: 20px;
+}

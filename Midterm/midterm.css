@@ -50,10 +50,11 @@ background-attachment: fixed;
 }
 
 main{
-
+padding: 0;
+margin: 0;
 }
 
-.one{
+.page{
     display: flex;
     background-color: gray;
     margin: 4%;
@@ -142,11 +143,6 @@ background-color: whitesmoke;
 }
 
 .img:hover{
-    transition: transform 0.5s ease;
-    transform: scale(1.02);
-}
-
-.img:{
     transition: transform 0.5s ease;
     transform: scale(1.02);
 }

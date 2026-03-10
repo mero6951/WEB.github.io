@@ -69,7 +69,7 @@ h1{
 }
 
 h2{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     padding: 10px;
     scroll-margin-top: 150px;
 }
@@ -89,6 +89,7 @@ article{
     height: auto;
     float: right;
     margin-left: 20px;
+    margin-bottom: 15px;
 }
 
 /*===========================================================================================*/
@@ -192,12 +193,12 @@ article{
 /*===========================================================================================*/
 
 .extra{
-    width: 50%;
+    width: 55%;
     margin: 0 auto;
-    border: 4px solid black;
+    border: 3px solid black;
     border-radius: 10px;
     background-color: RGB(189, 168, 147);
-    min-width: 500px;
+    min-width: 550px;
 }
 
 .extra ul{
@@ -293,5 +294,48 @@ strong {
     height: auto;
     border-radius: 5%;
     float: right;
-    margin-left: 20px;
+    margin-left: 30px;
+}
+
+
+
+@media screen and (max-width: 660px) {
+    .extra {
+        width: 65%;
+        min-width: unset;
+    }
+
+    .extra ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .headshot {
+    width: 100px;
+    height: auto;
+    border-radius: 5%;
+    
+    margin-left: 30px;
+    }
+
+    .extra ul a{
+        padding: 10px;
+        display: block;
+    }
+
+    .photos {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .header .title a  {
+        font-size: 200%;
+        font-family: 'Times New Roman', Times, serif;
+        
+    }
+
+    .headerP .title a {
+        font-size: 200%;
+        font-family: 'Times New Roman', Times, serif;
+    }
 }

@@ -55,7 +55,7 @@ margin: 0;
 }
 
 .page{
-    background-color: rgb(220, 220, 220);          /*rgb(159, 184, 209); /*rgb(147, 168, 189)*/
+    background-color: rgb(159, 184, 209);          /*rgb(159, 184, 209); /*rgb(147, 168, 189)*/
     margin: 4%;
     border-radius: 5px;
     overflow: hidden;
@@ -194,7 +194,6 @@ article{
 
 .extra{
     width: 55%;
-    margin: 0 auto;
     border: 3px solid black;
     border-radius: 10px;
     background-color: RGB(189, 168, 147);
@@ -303,6 +302,7 @@ strong {
     .extra {
         width: 65%;
         min-width: unset;
+        margin: 0 auto;
     }
 
     .extra ul {
@@ -337,5 +337,10 @@ strong {
     .headerP .title a {
         font-size: 200%;
         font-family: 'Times New Roman', Times, serif;
+    }
+
+    .header a  {
+        font-size: 80%;
+        letter-spacing: 0px;
     }
 }

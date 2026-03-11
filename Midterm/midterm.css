@@ -55,9 +55,9 @@ margin: 0;
 }
 
 .page{
-    background-color: whitesmoke;          /*rgb(159, 184, 209); /*rgb(147, 168, 189)*/
+    background-color: rgb(220, 220, 220);          /*rgb(159, 184, 209); /*rgb(147, 168, 189)*/
     margin: 4%;
-    /*border-radius: 10px;*/
+    border-radius: 5px;
     overflow: hidden;
 }
 

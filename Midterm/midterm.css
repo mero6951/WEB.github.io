@@ -56,16 +56,19 @@ margin: 0;
 
 .page{
     background-color: rgb(159, 184, 209);          /*rgb(159, 184, 209); /*rgb(147, 168, 189)*/
-    margin: 4%;
+    margin: 10px;
     border-radius: 5px;
     overflow: hidden;
+    margin: 30px;
 }
 
-h1{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    border-bottom: 1px dotted black;
+h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: left;
+    font-size: 400%;
+    border-bottom: 3px solid black;
     padding-bottom: 15px;
+    margin-top: 0;
 }
 
 h2{
@@ -78,6 +81,7 @@ h2{
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
     padding: 10px;
+    
 }
 
 article{
@@ -91,6 +95,7 @@ article{
     margin-left: 20px;
     margin-bottom: 15px;
 }
+
 
 /*===========================================================================================*/
 
@@ -344,3 +349,4 @@ strong {
         letter-spacing: 0px;
     }
 }
+

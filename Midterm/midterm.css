@@ -292,7 +292,6 @@ strong {
     align-items: flex-start;
     gap: 30px;
     padding: 0;
-    
 }
 
 .contact .p2 {
@@ -406,3 +405,39 @@ strong {
     }
 }
 
+/*------------------------------------------------------*/
+
+.skills {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+.skills caption {
+    font-family: Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 150%;
+    text-align: left;
+    padding-bottom: 10px;
+    padding: 10px;
+}
+
+.skills th {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 150%;
+    border-bottom: 2px solid black;
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.skills td {
+    padding: 10px 8px;
+    font-family: Helvetica, sans-serif;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#additional {
+    padding-left: 30px;
+}

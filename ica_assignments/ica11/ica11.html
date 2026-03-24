@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="ica11.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="all">
+<div class="box1">
+  <label for="custom-name">Enter name</label><br>
+  <input id="custom-name" type="text" placeholder="" />
+</div>
+<fieldset>
+  <legend>Choose location:</legend>
+  <label for="us">US</label
+  ><input id="us" type="radio" name="uk-us" value="us" checked />
+  <label for="uk">UK</label
+  ><input id="uk" type="radio" name="uk-us" value="uk" />
+</fieldset>
+<div>
+  <button class="generate">Generate random story</button>
+</div>
+</div>
+
+
+<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+<p class="story"></p>
+
+
+
+
+
+<script>
+// Complete variable definitions and random functions
+
+const customName = document.getElementById("custom-name");
+const generateBtn = document.querySelector(".generate");
+const story = document.querySelector(".story");
+
+function randomValueFromArray(array) {
+  const random = Math.floor(Math.random() * array.length);
+  return array[random];
+}
+
+// Raw text strings
+let characters = ["the King of England", "Tom Hanks", "Alex Hall"];
+let places = ["Snowbird", "CU Boulder", "the Mountains of Montana"];
+let events = ["teleported to San Fransico", "floated into the sky", "turned and sprinted in the opposite direction"];
+
+
+// Partial return random string function
+
+
+
+function returnRandomStoryString() {
+
+const randomCharacter = randomValueFromArray(characters);
+const randomPlace = randomValueFromArray(places);
+const randomEvent = randomValueFromArray(events);
+
+let storyText = `It was 100 Fahrenheit in ${randomPlace}, so Bob went for a run. Just as they left, Bob found his freind, ${randomCharacter}! Together they pranced through ${randomPlace}. All was well until they found a 1000 pound rock in the way. ${randomCharacter} is famously terrfied of big rocks so he ${randomEvent}`;
+  return storyText;
+}
+
+// Event listener and partial generate function definition
+
+generateBtn.addEventListener("click", generateStory);
+
+
+
+function generateStory() {
+let newStory = returnRandomStoryString();
+
+  if (customName.value !== "") {
+    const name = customName.value;
+    newStory = newStory.replace("Bob", name);
+  }
+
+  if (document.getElementById("uk").checked) {
+    const weight = `${Math.round(300 * 0.0714286)} stone`;
+    const temperature = `${Math.round((94-32)/1.8)} celcius`;
+    newStory = newStory.replace("1000 pound", weight);
+    newStory = newStory.replace("100 Fahrenheit", temperature);
+  }
+
+  // TODO: replace "" with the correct expression
+  story.textContent = newStory;
+  story.style.visibility = "visible";
+}
+</script>
+
+
+
+
+
+</body>
+</html>

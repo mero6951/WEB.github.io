@@ -106,6 +106,8 @@ h1 {
 
             if (distance < this.size + ball.size) {
               ball.color = this.color = randomRGB();
+              this.velX = -this.velX;
+              this.velY = -this.velY;
             }
         }}}
 
@@ -114,15 +116,15 @@ h1 {
 
     const balls = [];
 
-    while (balls.length < 25) {
-      const size = random(10, 20);
+    while (balls.length < 15) {
+      const size = random(10, 15);
       const ball = new Ball(
         // ball position always drawn at least one ball width
         // away from the edge of the canvas, to avoid drawing errors
         random(0 + size, width - size),
         random(0 + size, height - size),
-        random(-7, 7),
-        random(-7, 7),
+        random(-5, 5),
+        random(-5, 5),
         randomRGB(),
         size,
       );

@@ -1,33 +1,33 @@
 let startX, startY;
 
-document.querySelector('.newShape').addEventListener('click', () => {//NEW SHAPE BUTTON waiting for click
-    const shapes = ['circle', 'square', 'triangle'];
-    const pick = shapes[Math.floor(Math.random() * 3)];
+document.querySelector('.newShape').addEventListener('click', () => {//New shape button  listener
+    //const shapes = ['square', 'square', 'square'];
+    //const pick = shapes[Math.floor(Math.random() * 3)];
 
     const shape = document.createElement('div');
-    shape.classList.add(pick);//<add class of what was picked
+    shape.classList.add('square');
     shape.style.position = 'fixed';
     document.body.appendChild(shape);
 
-    shape.addEventListener('mousedown', mouseDown);
+shape.addEventListener('mousedown', mouseDown);
 });
 
 
 //https://www.google.com/search?q=how+to+make+things+draggable+javascript+for+html&rlz=1C1VDKB_enUS1123US1123&oq=how+to+make+things+draggable+javascript+for+html&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRirAjIHCAYQIRirAjIHCAcQIRifBdIBCDkxMjVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7384741b,vid:ymDjvycjgUM,st:0 - click and drag vid
-function mouseDown(e) {
-    const shape = e.target;
-    //e.clientX/Y - location of cursor
-    startX = e.clientX - shape.getBoundingClientRect().left;//calc how far in shape has been clicked
-    startY = e.clientY - shape.getBoundingClientRect().top;
+function mouseDown(a){
+    const shape = a.target;
+    //a.clientX/Y - location of cursor
+    startX = a.clientX - shape.getBoundingClientRect().left;//calc how far in shape has been clicked
+    startY = a.clientY - shape.getBoundingClientRect().top;
 
     document.addEventListener('mousemove', mouseMove);
     document.addEventListener('mouseup', mouseUp);
 
-    function mouseMove(e) {
-        shape.style.left = (e.clientX - startX) + 'px';
-        shape.style.top = (e.clientY - startY) + 'px';
+    function mouseMove(a){
+        shape.style.left = (a.clientX - startX) + 'px';
+        shape.style.top = (a.clientY - startY) + 'px';
+         calculateCoverage();
     }
-
     function mouseUp() {
         document.removeEventListener('mousemove', mouseMove);
         document.removeEventListener('mouseup', mouseUp);
@@ -35,15 +35,47 @@ function mouseDown(e) {
         //trash listener
     const trash = document.querySelector('.trash');
     const trashBox = trash.getBoundingClientRect();
-        if (
-            e.clientX > trashBox.left &&
-            e.clientX < trashBox.right &&
-            e.clientY > trashBox.top &&
-            e.clientY < trashBox.bottom
-        ) {
+        if (a.clientX > trashBox.left && a.clientX < trashBox.right && a.clientY > trashBox.top && a.clientY < trashBox.bottom) {
             shape.remove();
+
     }}
 }
 
+function calculateCoverage() {
+    const box = document.querySelector('.box');
+    const boxRect = box.getBoundingClientRect();
+    const boxArea = boxRect.width * boxRect.height;
+
+    let coveredArea = 0;
+
+    document.querySelectorAll('.circle, .square, .triangle').forEach(shape => {
+        const shapeRect = shape.getBoundingClientRect();
+        const overlapLeft = Math.max(shapeRect.left, boxRect.left);
+        const overlapRight = Math.min(shapeRect.right, boxRect.right);
+        const overlapTop = Math.max(shapeRect.top, boxRect.top);
+        const overlapBottom = Math.min(shapeRect.bottom, boxRect.bottom);
+        const overlapWidth = overlapRight - overlapLeft;
+        const overlapHeight = overlapBottom - overlapTop;
 
 
+    if (overlapWidth > 0 && overlapHeight > 0) {
+        coveredArea += overlapWidth * overlapHeight;
+        }
+    }
+);
+
+let percent = Math.min(Math.round((coveredArea / boxArea) * 100), 100);
+percent = 100 - percent; 
+document.querySelector('.title').textContent = 'Volume: ' + percent + '%';
+}
+
+
+document.querySelector('.submit').addEventListener('click', () => {
+    document.querySelectorAll('.square').forEach(
+        shape =>{
+            shape.remove();
+        }
+    )
+
+    calculateCoverage();
+});

@@ -36,8 +36,9 @@ body {
 }
 
 .box {
-    background-color: black;
-    width: 50%;
+    background-image: url("img/web_Project1.png");
+    background-size: contain;
+    width: 100%;
     aspect-ratio: 1/1;
 }
 
@@ -51,19 +52,31 @@ body {
 
 
 
-.circle {
-    width: 100px;
-    height: 100px;
-    background-color: grey;
-    border-radius: 50%;
-    position: fixed;
-}
-
 .square {
     width: 100px;
     height: 100px;
-    background-color: grey;
+    
     position: fixed;
+    background-image: url("img/web_Project2.png");
+    background-size: contain;
+}
+
+.square1 {
+    width: 100px;
+    height: 100px;
+    
+    position: fixed;
+    background-image: url("img/web_Project3.png");
+    background-size: contain;
+}
+
+.square2 {
+    width: 100px;
+    height: 100px;
+    
+    position: fixed;
+    background-image: url("img/web_Project4.png");
+    background-size: contain;
 }
 
 .triangle {
@@ -72,5 +85,13 @@ body {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid grey;
+    position: fixed;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    border-radius: 50%;
     position: fixed;
 }

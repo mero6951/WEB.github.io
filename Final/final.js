@@ -1,11 +1,24 @@
 let startX, startY;
+let count = 0;
+
+
 
 document.querySelector('.newShape').addEventListener('click', () => {//New shape button  listener
     //const shapes = ['square', 'square', 'square'];
     //const pick = shapes[Math.floor(Math.random() * 3)];
 
+    const options = ['square', 'square1', 'square2'];
+    //const pick = options[Math.floor(Math.random() * 3)];  //random rotate
+    const pick = options[count];
+
+    count++; //rotate through all 3
+    //console.log(count, pick);
+    if (count == 3){
+    count = 0;
+    } //
+
     const shape = document.createElement('div');
-    shape.classList.add('square');
+    shape.classList.add(pick);
     shape.style.position = 'fixed';
     document.body.appendChild(shape);
 
@@ -32,13 +45,15 @@ function mouseDown(a){
         document.removeEventListener('mousemove', mouseMove);
         document.removeEventListener('mouseup', mouseUp);
 
-        //trash listener
+       /* //trash listener
     const trash = document.querySelector('.trash');
     const trashBox = trash.getBoundingClientRect();
         if (a.clientX > trashBox.left && a.clientX < trashBox.right && a.clientY > trashBox.top && a.clientY < trashBox.bottom) {
             shape.remove();
 
-    }}
+    }
+     */       
+    }
 }
 
 function calculateCoverage() {
@@ -48,7 +63,7 @@ function calculateCoverage() {
 
     let coveredArea = 0;
 
-    document.querySelectorAll('.circle, .square, .triangle').forEach(shape => {
+    document.querySelectorAll('.square, .square1, .square2').forEach(shape => {
         const shapeRect = shape.getBoundingClientRect();
         const overlapLeft = Math.max(shapeRect.left, boxRect.left);
         const overlapRight = Math.min(shapeRect.right, boxRect.right);
@@ -71,7 +86,7 @@ document.querySelector('.title').textContent = 'Volume: ' + percent + '%';
 
 
 document.querySelector('.submit').addEventListener('click', () => {
-    document.querySelectorAll('.square').forEach(
+    document.querySelectorAll('.square, .square1, .square2').forEach(
         shape =>{
             shape.remove();
         }

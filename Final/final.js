@@ -24,7 +24,7 @@ document.querySelector('.newShape').addEventListener('click', () => {//New shape
     shape.style.position = 'fixed';
 
     if (pick !== 'triangle' && pick !== 'circle') {
-        const size = Math.floor(Math.random() * 61) + 65; // 45-135px
+        const size = Math.floor(Math.random() * 71) + 55; // 45-135px
         shape.style.height = size + 'px';
         shape.style.width = size + 'px';
     }

@@ -7,21 +7,32 @@ document.querySelector('.newShape').addEventListener('click', () => {//New shape
     //const shapes = ['square', 'square', 'square'];
     //const pick = shapes[Math.floor(Math.random() * 3)];
 
-    const options = ['square', 'square1', 'square2'];
-    //const pick = options[Math.floor(Math.random() * 3)];  //random rotate
-    const pick = options[count];
+    const options = ['square', 'square1', 'square2', /*'triangle', 'circle'*/];
+    //const pick = options[count];
+    const pick = options[Math.floor(Math.random() * options.length)];
 
+
+    /*  -equaly rotate through all
     count++; //rotate through all 3
     //console.log(count, pick);
     if (count == 3){
     count = 0;
-    } //
+    } */
 
     const shape = document.createElement('div');
     shape.classList.add(pick);
     shape.style.position = 'fixed';
-    document.body.appendChild(shape);
 
+    if (pick !== 'triangle' && pick !== 'circle') {
+        const size = Math.floor(Math.random() * 31) + 75; // 55-125px
+        shape.style.height = size + 'px';
+        shape.style.width = size + 'px';
+    }
+    
+    shape.style.left = '185px'; 
+    shape.style.top = '280px';  
+
+document.body.appendChild(shape);
 shape.addEventListener('mousedown', mouseDown);
 });
 
@@ -63,7 +74,7 @@ function calculateCoverage() {
 
     let coveredArea = 0;
 
-    document.querySelectorAll('.square, .square1, .square2').forEach(shape => {
+    document.querySelectorAll('.square, .square1, .square2, .triangle, .circle').forEach(shape => {
         const shapeRect = shape.getBoundingClientRect();
         const overlapLeft = Math.max(shapeRect.left, boxRect.left);
         const overlapRight = Math.min(shapeRect.right, boxRect.right);
@@ -76,21 +87,31 @@ function calculateCoverage() {
     if (overlapWidth > 0 && overlapHeight > 0) {
         coveredArea += overlapWidth * overlapHeight;
         }
-    }
-);
+    });
 
 let percent = Math.min(Math.round((coveredArea / boxArea) * 100), 100);
 percent = 100 - percent; 
 document.querySelector('.title').textContent = 'Volume: ' + percent + '%';
+return percent;
 }
 
 
 document.querySelector('.submit').addEventListener('click', () => {
-    document.querySelectorAll('.square, .square1, .square2').forEach(
+    const finalVolume = calculateCoverage();
+   
+    document.querySelectorAll('.square, .square1, .square2, .triangle, .circle').forEach(
         shape =>{
             shape.remove();
         }
     )
+
+    document.querySelector('.greyOut').style.display = 'flex';
+    document.querySelector('.final').textContent = 'Your volume has been set at: ' + finalVolume + '%';
+
+    document.querySelector('#closeBtn').addEventListener('click', () => {
+        document.querySelector('.greyOut').style.display = 'none';
+    });
+
 
     calculateCoverage();
 });
